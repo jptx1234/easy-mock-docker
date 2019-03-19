@@ -15,7 +15,7 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 9DA31620334BD75
       mkdir -p /data/db && \
       apt-get install -y mongodb-org redis-server && \
       # 安装easy-mock
-      wget --no-check-certificate -O easy_mock.tar.gz https://github.com/easy-mock/easy-mock/archive/v${EASY_MOCK_URL}.tar.gz && \
+      wget --no-check-certificate -O easy_mock.tar.gz https://github.com/easy-mock/easy-mock/archive/v${EASY_MOCK_VERSION}.tar.gz && \
       tar -xzvf easy_mock.tar.gz --strip-components 1 && \
       rm -f easy_mock.tar.gz && \
       yarn install && \
