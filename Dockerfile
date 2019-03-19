@@ -21,10 +21,12 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 9DA31620334BD75
       yarn install && \
       yarn run build && \
       yarn global add pm2 && \
-      yarn cache clean 
+      yarn cache clean && \
+      printf "mongod --bind_ip_all --fork --logpath /dev/null \n redis-server --protected-mode no --daemonize yes \n pm2-docker start app.js" > /start-all.sh && \
+      chmod a+x /start-all.sh
  
  # 暴露端口7300
  EXPOSE 7300
  # 设置镜像默认启动命令
- CMD ["mongod", "--bind_ip_all", "--fork", "--logpath", "/dev/null", "&&", "redis-server", "--protected-mode", "no", "--daemonize", "yes", "&&", "pm2-docker", "start", "app.js"]
+ CMD ["/start-all.sh"]
  
