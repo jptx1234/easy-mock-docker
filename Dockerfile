@@ -28,5 +28,5 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 9DA31620334BD75
  # 暴露端口7300
  EXPOSE 7300
  # 设置镜像默认启动命令
- CMD ["/start-all.sh"]
+ CMD ["sh", "-c", "/start-all.sh"]
  
