@@ -13,9 +13,7 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 9DA31620334BD75
       echo "deb http://repo.mongodb.org/apt/debian stretch/mongodb-org/4.0 main" | tee /etc/apt/sources.list.d/mongodb-org-4.0.list && \
       apt-get update && \
       mkdir -p /data/db && \
-      apt-get install -y mongodb-org mongodb-org && \
-      # 安装redis
-      apt install -y redis-server && \
+      apt-get install -y mongodb-org redis-server && \
       # 安装easy-mock
       wget --no-check-certificate -O easy_mock.tar.gz https://github.com/easy-mock/easy-mock/archive/v${EASY_MOCK_URL}.tar.gz && \
       tar -xzvf easy_mock.tar.gz --strip-components 1 && \
