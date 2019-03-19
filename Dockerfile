@@ -26,5 +26,5 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 9DA31620334BD75
  # 暴露端口7300
  EXPOSE 7300
  # 设置镜像默认启动命令
- CMD ["mongod", "--bind_ip_all", "--fork", "--logpath", "/dev/null", "&&", "redis-server", "--protected-mode", "no", "--daemonize", "no", "&&", "pm2-docker", "start", "app.js"]
+ CMD ["mongod", "--bind_ip_all", "--fork", "--logpath", "/dev/null", "&&", "redis-server", "--protected-mode", "no", "--daemonize", "yes", "&&", "pm2-docker", "start", "app.js"]
  
